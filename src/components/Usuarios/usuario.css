@@ -1,0 +1,6 @@
+.contenedorUsuario {
+    display: flex;
+    flex-direction: column;
+    border: steelblue 2px solid;
+    padding: 1rem;
+}

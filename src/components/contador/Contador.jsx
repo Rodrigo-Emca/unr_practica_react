@@ -1,23 +1,25 @@
 import React from 'react'
+import { useState } from 'react'
 
-export default class Contador extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            count: 0
-        };
-    }
-    
-    incrementar = () => {
-        this.setState({ count: this.state.count + 1 });
-    };
+const Contador = () => {
+    const [contadorNumeros, setContadorNumeros] = useState(0);
+    const contadorNoReactivo = 0;
 
-    render() {
-        return (
-            <div>
-                <h1>Contador: {this.state.count}</h1>
-                <button onClick={this.incrementar}>Incrementar</button>
-            </div>
-        )
+    const contar = () => {
+        console.log('Clickeado')
+        setContadorNumeros(contadorNumeros + 1)
+        // contadorNoReactivo = contadorNoReactivo + 1
     }
+
+    return (
+        <>
+            <p>Contador: <span>{contadorNumeros}</span></p>
+            {/* <p>Contador no reactivo: <span>{contadorNoReactivo}</span></p> */}
+            <button onClick={contar}>
+            Contar
+            </button>
+        </>
+    )
 }
+
+export default Contador
